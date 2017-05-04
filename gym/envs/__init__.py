@@ -1,5 +1,21 @@
 from gym.envs.registration import registry, register, make, spec
 
+# GridWorld
+# ----------------------------------------
+register(
+    id='WindyGridworld-v0',
+    entry_point='gym.envs.gridworld:WindyGridworldEnv',
+    max_episode_steps=1e4,
+    reward_threshold=-120.0,
+)
+
+register(
+    id='CliffWalking-v0',
+    entry_point='gym.envs.gridworld:CliffWalkingEnv',
+    max_episode_steps=1e4,
+    reward_threshold=-120.0,
+)
+
 # Algorithmic
 # ----------------------------------------
 

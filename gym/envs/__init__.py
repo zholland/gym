@@ -179,6 +179,11 @@ register(
 )
 
 register(
+    id='CliffWalking-v0',
+    entry_point='gym.envs.toy_text:CliffWalkingEnv',
+)
+
+register(
     id='NChain-v0',
     entry_point='gym.envs.toy_text:NChainEnv',
     max_episode_steps=1000,
@@ -338,7 +343,7 @@ for game in ['air_raid', 'alien', 'amidar', 'assault', 'asterix', 'asteroids', '
         )
 
         register(
-            id='{}-v3'.format(name),
+            id='{}-v4'.format(name),
             entry_point='gym.envs.atari:AtariEnv',
             kwargs={'game': game, 'obs_type': obs_type},
             max_episode_steps=100000,
@@ -361,7 +366,7 @@ for game in ['air_raid', 'alien', 'amidar', 'assault', 'asterix', 'asteroids', '
         )
 
         register(
-            id='{}Deterministic-v3'.format(name),
+            id='{}Deterministic-v4'.format(name),
             entry_point='gym.envs.atari:AtariEnv',
             kwargs={'game': game, 'obs_type': obs_type, 'frameskip': frameskip},
             max_episode_steps=100000,
@@ -379,7 +384,7 @@ for game in ['air_raid', 'alien', 'amidar', 'assault', 'asterix', 'asteroids', '
         # No frameskip. (Atari has no entropy source, so these are
         # deterministic environments.)
         register(
-            id='{}NoFrameskip-v3'.format(name),
+            id='{}NoFrameskip-v4'.format(name),
             entry_point='gym.envs.atari:AtariEnv',
             kwargs={'game': game, 'obs_type': obs_type, 'frameskip': 1}, # A frameskip of 1 means we get every frame
             max_episode_steps=frameskip * 100000,
